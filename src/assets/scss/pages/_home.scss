@@ -1,0 +1,221 @@
+.title-side:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -25px;
+  width: .4rem;
+  background-color: $warning;
+}
+.stuff {
+  background-color: #f7f5f1;
+  overflow: hidden;
+  &-inner {
+    border: 3px solid white;
+    height: 230px;
+  }
+  & img {
+    width: 100%;
+    height: 200px;
+    transition: 1s;
+    object-fit: cover;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+.shop-pic {
+  overflow: hidden;
+  & img {
+    transition: 1s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+.shop-link {
+  color: $secondary;
+  &:hover {
+    color: $warning;
+  }
+}
+.banner-cow {
+  @include banner('~@/assets/image/cow.jpg',200px);
+  background-position: center 37%;
+  background-attachment: fixed;
+  &-text {
+    @include position-center;
+    background: rgba(233, 172, 5, 0.8);
+  }
+}
+.title-mark {
+  width: 75%;
+}
+.eat {
+  &-bg {
+    @include banner('~@/assets/image/bgpic2.jpeg', 500px);
+    background-position: center top;
+  }
+  &-shadow{
+    text-align: center;
+    position: relative;
+    background: rgba(255,255,255,.7);
+  }
+}
+.fairy {
+  &-bg {
+    @include banner('~@/assets/image/bgpic5.jpg', 500px);
+    background-position: center top;
+  }
+  &-title {
+    height: 500px;
+  }
+  &-shadow{
+    text-align: center;
+    position: relative;
+    background: rgba(255,255,255,.7);
+  }
+}
+.home-banner {
+  @include banner("https://upload.cc/i1/2020/12/10/0mzbhk.jpg", 100vh);
+  &-text {
+    background: rgba(56, 27, 27, 0.4);
+    color: $white;
+    border: 5px double #000;
+  }
+  &-border {
+    border: 5px solid hsla(0,0%,100%,.7);
+  }
+  &-title {
+    font-size: 28px;
+  }
+}
+.home-modal {
+  @include banner('~@/assets/image/mini2.jpg', 200px);
+  &-bg {
+    background: rgba(255, 255, 255, 0.7);
+    line-height: 2.5;
+    @include align-middle;
+  }
+}
+.subscribe {
+  @include banner("https://upload.cc/i1/2020/12/10/rJuiYq.jpg", 400px);
+  background-position: center center;
+  & .form-control {
+      border-radius: 0rem;
+      border: 2px solid $glass;
+      border-right: none;
+  }
+  & .input-group {
+    max-width: 425px;
+  }
+  & .btn {
+    padding: 0 10px;
+    font-size: 14px;
+  }
+}
+
+@include smobile {
+  .stuff img {
+    height: 250px;
+  }
+  .banner-cow {
+    height: 250px;
+  }
+  .home-banner-title {
+    font-size: 36px;
+  }
+  .home-banner-text{
+    & .text-title {
+      font-size: 36px;
+    }
+    & .text-natural {
+      font-size: 23px;
+    }
+  }
+  .fairy-shadow, .eat-shadow {
+    & .h4 {
+      font-size: 32px;
+    }
+    & .h6 {
+      font-size: 18px;
+    }
+  }
+  .title-mark {
+    width: 55%;
+  }
+  .subscribe {
+    p {
+      font-size: 32px;
+    }
+    & .btn {
+      width: 30%;
+      font-size: 22px;
+    }
+  }
+}
+@include mobile {
+  .stuff img {
+    height: 280px;
+  }
+  .banner-cow {
+    height: 300px;
+  }
+  .subscribe {
+    & .btn {
+      width: 40%;
+    }
+  }
+  .home-banner-title {
+    font-size: 42px;
+  }
+}
+@include pad {
+  .stuff img {
+    height: 260px;
+  }
+  .banner-cow {
+    height: 350px;
+    &-text {
+      transform: translate(0%,-50%);
+      left: 5%;
+    }
+  }
+  .title-mark {
+    width: 30%;
+  }
+  .fairy-shadow, .eat-shadow {
+    background: transparent;
+    text-align: left;
+    &:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: -30px;
+      left: -30px;
+      box-shadow: 20px 20px 20px rgba(224, 224, 223, 0.9) inset;
+    }
+  }
+  .eat-shadow:before {
+    top: 20px;
+    left: 0px;
+    box-shadow: 20px 20px 20px rgba(224, 224, 223, 0.9);
+  }
+  .home-banner-text{
+    & .text-title {
+      font-size: 46px;
+    }
+    & .text-natural, & .text-piece {
+      font-size: 28px;
+    }
+    & .text-since {
+      font-size: 20px;
+    }
+  }
+}
+@include desktop {
+  .banner-cow {
+    height: 400px;
+  }
+}
